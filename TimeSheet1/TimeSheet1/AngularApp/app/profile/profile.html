@@ -1,0 +1,141 @@
+﻿<div class="container" style="padding-left:180px;">
+    <div class="form-horizontal well" >
+        <h2>Profile </h2>
+
+
+        <br />
+        <div class="form-group">
+            <div class="col-md-4">
+                <h3>Personal Information</h3>
+            </div>
+            <div class="col-md-2 pull-right" style="margin-top:10px;">
+
+                <button class="btn btn-lg btn-default" type="submit" ng-click="save(P.FirstName,P)">
+                    Save
+                </button>
+            </div>
+        </div>
+        <hr style="background-color:black;height:1px;" />
+        <br />
+        <div class="form-group">
+            <label for="First" class="control-label col xs-1 col-md-2">First Name</label>
+            <div class="col-md-4">
+                <input type="text" class="form-control" id="First" ng-model="P.FirstName" value="{{P.FirstName}}" />
+
+            </div>
+
+            <label for="Last" class="control-label col xs-1 col-md-2">Last Name</label>
+            <div class="col-md-4">
+                <input type="text" class="form-control" id="Last" ng-model="P.LastName" value="{{P.LastName}}" />
+
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="country" class="control-label col-md-2">Country</label>
+            <div class="col-md-4" ng-init='countries=["India","USA","Canada","Japan"]'>
+                <select class="form-control" id="country" ng-model="P.Country" value="{{P.Country}}">
+                    <option disabled value="">Select</option>
+                    <option ng-repeat="country in countries">{{country}}</option>
+                </select>
+
+            </div>
+
+
+            <label for="department" class="control-label col-md-2">Department</label>
+            <div class="col-md-4" ng-init='departments=["Development","Testing","HR","Deployment"]'>
+                <select class="form-control" id="department" ng-model="P.Department" value="{{P.Department}}">
+                    <option disabled value="">select</option>
+                    <option ng-repeat="department in departments">{{department}}</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="address" class="control-label col xs-1 col-md-2">Address </label>
+            <div class="col-md-4">
+                <input type="text" class="form-control" id="address" ng-model="P.Address" value="{{P.Address}}" />
+
+            </div>
+
+
+            <label for="position" class="control-label col-md-2">Position</label>
+            <div class="col-md-4" ng-init='positions=["Developer","Team Leader","HR","Manager","CEO"]'>
+                <select class="form-control" id="position" ng-model="P.Position" value="{{P.Position}}">
+                    <option disabled value="">Select</option>
+                    <option ng-repeat="position in positions">{{position}}</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="address2" class="control-label col xs-1 col-md-2"> </label>
+            <div class="col-md-4">
+                <input type="text" class="form-control" id="address2" ng-model="P.Address2" value="{{P.Address2}}" />
+
+            </div>
+
+
+            <label for="report" class="control-label col-md-2">Reports to</label>
+            <div class="col-md-4" ng-init='reports=["Krishna","Nag"]'>
+                <select class="form-control" id="report" ng-model="P.Reports" value="{{P.Reports}}">
+                    <option disabled value="">Select</option>
+                    <option ng-repeat="report in reports">{{report}}</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="postal" class="control-label col xs-1 col-md-2">Postal Code </label>
+            <div class="col-md-4">
+                <input type="text" class="form-control" id="postal" ng-model="P.Postal" value="{{P.Postal}}" />
+
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="city" class="control-label col xs-1 col-md-2">City or Town</label>
+            <div class="col-md-4">
+                <input type="text" class="form-control" id="city" ng-model="P.City" value="{{P.City}}" />
+
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="SP" class="control-label col xs-1 col-md-2">State or Province</label>
+            <div class="col-md-4">
+                <input type="text" class="form-control" id="SP" ng-model="P.State" value="{{P.State}}" />
+
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="PP" class="control-label col xs-1 col-md-2">Primary Phone</label>
+            <div class="col-md-4">
+                <input type="tel" class="form-control" id="PP" ng-model="P.Phone" value="{{P.Phone}}" />
+
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="SP" class="control-label col xs-1 col-md-2">Secondary Phone</label>
+            <div class="col-md-4">
+                <input type="tel" class="form-control" id="SP" ng-model="P.Phone2" value="{{P.Phone2}}" />
+
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="OP" class="control-label col xs-1 col-md-2">other Phone</label>
+            <div class="col-md-4">
+                <input type="tel" class="form-control" id="OP" ng-model="P.Other" value="{{P.Other}}" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="primary" class="control-label col-md-2">Primary Email</label>
+            <div class="col-md-4">
+                <input type="text" class="form-control" id="primary" ng-model="P.PrimaryEmail" value="{{P.PrimaryEmail}}" />
+
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="secondary" class="control-label col-md-2">Secondary Email</label>
+            <div class="col-md-4">
+                <input type="text" class="form-control" id="secondary" ng-model="P.SecondayEmail" value="{{P.SecondayEmail}}" />
+
+            </div>
+        </div>
+
+    </div>
+</div>

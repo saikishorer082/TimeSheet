@@ -1,0 +1,73 @@
+﻿<div class="container">
+    <nav role="navigation" class="navbar navbar-inverse nav-justified">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="#" class="navbar-brand">{{::brandname}}</a>
+
+        </div>
+
+        <div >
+            <ul class="nav navbar-nav navbar-right col-lg-pull-2" >
+                <li class="col-lg-pull-4" ng-if="!isAuthenticated">
+                    <a  ui-sref="login">Login</a></li>
+                <li class="col-lg-pull-4">
+                    <a ui-sref="profile" ng-if="isAuthenticated" class="glyphicon glyphicon-user">{{UserInfoDB.FirstName}},{{UserInfoDB.LastName}}</a>
+                </li>
+                <li class="col-lg-pull-4">
+                    <a ui-sref="login" ng-if="isAuthenticated" class="glyphicon glyphicon-log-out" ng-click="logOut()">Logout</a>
+                </li>
+            </ul>
+            </div>
+    </nav>
+
+    <div class="form-horizontal">
+        <div ng-if='isAuthenticated' class="heaven">
+            <ul class="nav nav-pills nav-stacked nav">
+
+
+                <li>
+                    <a ui-sref="Profile">
+                        <b>Profile</b>
+                    </a>
+
+                </li>
+
+                <li>
+                    <a ui-sref="newTimeEntry">
+                        <b>New Time Entry</b>
+                    </a>
+                </li>
+                <li>
+
+
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown">
+                        <b>View Time Entry</b>
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a ui-sref="viewtimeentry"><b>View TimeEntry</b></a></li>
+                        <li><a ui-sref="ChangePassword"><b>ChangePassword</b></a></li>
+                        <li><a ui-sref="SecurityQuestions"><b>SecurityQuestions</b></a></li>
+                        <li><a ui-sref="CreateNewResource"><b>Create New Resource</b></a></li>
+                    </ul>
+
+                <li>
+                    <a ui-sref="SignOff">
+                        <b>Sign off</b>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</div>
+
+
+

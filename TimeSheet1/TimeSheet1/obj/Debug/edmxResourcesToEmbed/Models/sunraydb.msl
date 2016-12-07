@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Sunray12dbModelStoreContainer" CdmEntityContainer="Sunray12dbDataContext">
+    <EntitySetMapping Name="newentrytbls">
+      <EntityTypeMapping TypeName="Sunray12dbModel.newentrytbl">
+        <MappingFragment StoreEntitySet="newentrytbl">
+          <ScalarProperty Name="WorkDay" ColumnName="WorkDay" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="Client" ColumnName="Client" />
+          <ScalarProperty Name="TaskType" ColumnName="TaskType" />
+          <ScalarProperty Name="Project" ColumnName="Project" />
+          <ScalarProperty Name="SubProject" ColumnName="SubProject" />
+          <ScalarProperty Name="Hour" ColumnName="Hour" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NewTimeEntrytbls">
+      <EntityTypeMapping TypeName="Sunray12dbModel.NewTimeEntrytbl">
+        <MappingFragment StoreEntitySet="NewTimeEntrytbl">
+          <ScalarProperty Name="WorkDay" ColumnName="WorkDay" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="Client" ColumnName="Client" />
+          <ScalarProperty Name="TaskType" ColumnName="TaskType" />
+          <ScalarProperty Name="Project" ColumnName="Project" />
+          <ScalarProperty Name="Subproject" ColumnName="Subproject" />
+          <ScalarProperty Name="Hour" ColumnName="Hour" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="newtimetbls">
+      <EntityTypeMapping TypeName="Sunray12dbModel.newtimetbl">
+        <MappingFragment StoreEntitySet="newtimetbl">
+          <ScalarProperty Name="Client" ColumnName="Client" />
+          <ScalarProperty Name="TaskType" ColumnName="TaskType" />
+          <ScalarProperty Name="Project" ColumnName="Project" />
+          <ScalarProperty Name="SubProject" ColumnName="SubProject" />
+          <ScalarProperty Name="Hour" ColumnName="Hour" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Profiletbls">
+      <EntityTypeMapping TypeName="Sunray12dbModel.Profiletbl">
+        <MappingFragment StoreEntitySet="Profiletbl">
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Position" ColumnName="Position" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="Reports" ColumnName="Reports" />
+          <ScalarProperty Name="Postal" ColumnName="Postal" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Phone2" ColumnName="Phone2" />
+          <ScalarProperty Name="Other" ColumnName="Other" />
+          <ScalarProperty Name="PrimaryEmail" ColumnName="PrimaryEmail" />
+          <ScalarProperty Name="SecondaryEmail" ColumnName="SecondaryEmail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Registertbls">
+      <EntityTypeMapping TypeName="Sunray12dbModel.Registertbl">
+        <MappingFragment StoreEntitySet="Registertbl">
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="Phonenumber" ColumnName="Phonenumber" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="SecurityQuestion1" ColumnName="SecurityQuestion1" />
+          <ScalarProperty Name="SecurityAnswer1" ColumnName="SecurityAnswer1" />
+          <ScalarProperty Name="SecurityQuestion2" ColumnName="SecurityQuestion2" />
+          <ScalarProperty Name="SecurityAnswer2" ColumnName="SecurityAnswer2" />
+          <ScalarProperty Name="SecurityQuestion3" ColumnName="SecurityQuestion3" />
+          <ScalarProperty Name="SecurityAnswer3" ColumnName="SecurityAnswer3" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Securitytbls">
+      <EntityTypeMapping TypeName="Sunray12dbModel.Securitytbl">
+        <MappingFragment StoreEntitySet="Securitytbl">
+          <ScalarProperty Name="SecurityQuestions1" ColumnName="SecurityQuestions1" />
+          <ScalarProperty Name="SecurityAnswer1" ColumnName="SecurityAnswer1" />
+          <ScalarProperty Name="SecurityQuestions2" ColumnName="SecurityQuestions2" />
+          <ScalarProperty Name="SecurityAnswer2" ColumnName="SecurityAnswer2" />
+          <ScalarProperty Name="SecurityQuestions3" ColumnName="SecurityQuestions3" />
+          <ScalarProperty Name="SecurityAnswer3" ColumnName="SecurityAnswer3" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblauths">
+      <EntityTypeMapping TypeName="Sunray12dbModel.tblauth">
+        <MappingFragment StoreEntitySet="tblauth">
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Company" ColumnName="Company" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblChangePwds">
+      <EntityTypeMapping TypeName="Sunray12dbModel.tblChangePwd">
+        <MappingFragment StoreEntitySet="tblChangePwd">
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="Linkedemail" ColumnName="Linkedemail" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbllogins">
+      <EntityTypeMapping TypeName="Sunray12dbModel.tbllogin">
+        <MappingFragment StoreEntitySet="tbllogin">
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Company" ColumnName="Company" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

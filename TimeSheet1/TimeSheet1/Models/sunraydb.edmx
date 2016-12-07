@@ -1,0 +1,427 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Sunray12dbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="newentrytbl">
+          <Key>
+            <PropertyRef Name="StartTime" />
+          </Key>
+          <Property Name="WorkDay" Type="date" />
+          <Property Name="StartTime" Type="time" Precision="7" Nullable="false" />
+          <Property Name="EndTime" Type="time" Precision="7" />
+          <Property Name="Client" Type="nvarchar(max)" />
+          <Property Name="TaskType" Type="nvarchar(max)" />
+          <Property Name="Project" Type="nvarchar(max)" />
+          <Property Name="SubProject" Type="nvarchar" MaxLength="50" />
+          <Property Name="Hour" Type="nvarchar(max)" />
+          <Property Name="Comment" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="NewTimeEntrytbl">
+          <Key>
+            <PropertyRef Name="WorkDay" />
+          </Key>
+          <Property Name="WorkDay" Type="date" Nullable="false" />
+          <Property Name="StartTime" Type="time" Precision="7" Nullable="false" />
+          <Property Name="EndTime" Type="time" Precision="7" Nullable="false" />
+          <Property Name="Client" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="TaskType" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Project" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Subproject" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Hour" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Comment" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="newtimetbl">
+          <Key>
+            <PropertyRef Name="TaskType" />
+          </Key>
+          <Property Name="Client" Type="nvarchar(max)" />
+          <Property Name="TaskType" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Project" Type="nchar" MaxLength="10" />
+          <Property Name="SubProject" Type="nchar" MaxLength="10" />
+          <Property Name="Hour" Type="nchar" MaxLength="10" />
+          <Property Name="Comment" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Profiletbl">
+          <Key>
+            <PropertyRef Name="FirstName" />
+          </Key>
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Country" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Department" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Address" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Position" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Address2" Type="nvarchar" MaxLength="50" />
+          <Property Name="Reports" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Postal" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="City" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="State" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Phone" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Phone2" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="Other" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="PrimaryEmail" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SecondaryEmail" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Registertbl">
+          <Key>
+            <PropertyRef Name="Firstname" />
+          </Key>
+          <Property Name="Firstname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Lastname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Phonenumber" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Age" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="gender" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Country" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SecurityQuestion1" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SecurityAnswer1" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SecurityQuestion2" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SecurityAnswer2" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SecurityQuestion3" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SecurityAnswer3" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Username" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Securitytbl">
+          <Key>
+            <PropertyRef Name="SecurityQuestions1" />
+          </Key>
+          <Property Name="SecurityQuestions1" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SecurityAnswer1" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SecurityQuestions2" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SecurityAnswer2" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SecurityQuestions3" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SecurityAnswer3" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblauth">
+          <Key>
+            <PropertyRef Name="Username" />
+          </Key>
+          <Property Name="Username" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+          <Property Name="Company" Type="nvarchar" MaxLength="50" />
+          <Property Name="Department" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tblChangePwd">
+          <Key>
+            <PropertyRef Name="Username" />
+          </Key>
+          <Property Name="Username" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="CompanyId" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Linkedemail" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbllogin">
+          <Key>
+            <PropertyRef Name="Username" />
+          </Key>
+          <Property Name="Username" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Company" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Department" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="Sunray12dbModelStoreContainer">
+          <EntitySet Name="newentrytbl" EntityType="Self.newentrytbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NewTimeEntrytbl" EntityType="Self.NewTimeEntrytbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="newtimetbl" EntityType="Self.newtimetbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Profiletbl" EntityType="Self.Profiletbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Registertbl" EntityType="Self.Registertbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Securitytbl" EntityType="Self.Securitytbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblauth" EntityType="Self.tblauth" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblChangePwd" EntityType="Self.tblChangePwd" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbllogin" EntityType="Self.tbllogin" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Sunray12dbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="newentrytbl">
+          <Key>
+            <PropertyRef Name="StartTime" />
+          </Key>
+          <Property Name="WorkDay" Type="DateTime" Precision="0" />
+          <Property Name="StartTime" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="EndTime" Type="Time" Precision="7" />
+          <Property Name="Client" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TaskType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Project" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SubProject" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Hour" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="NewTimeEntrytbl">
+          <Key>
+            <PropertyRef Name="WorkDay" />
+          </Key>
+          <Property Name="WorkDay" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="StartTime" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="EndTime" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="Client" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TaskType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Project" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Subproject" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Hour" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="newtimetbl">
+          <Key>
+            <PropertyRef Name="TaskType" />
+          </Key>
+          <Property Name="Client" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TaskType" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Project" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="SubProject" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Hour" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Comment" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Profiletbl">
+          <Key>
+            <PropertyRef Name="FirstName" />
+          </Key>
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Country" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Department" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Position" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Address2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Reports" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Postal" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="State" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Phone" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Phone2" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Other" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PrimaryEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SecondaryEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Registertbl">
+          <Key>
+            <PropertyRef Name="Firstname" />
+          </Key>
+          <Property Name="Firstname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Lastname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Phonenumber" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Age" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Country" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SecurityQuestion1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SecurityAnswer1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SecurityQuestion2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SecurityAnswer2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SecurityQuestion3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SecurityAnswer3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Securitytbl">
+          <Key>
+            <PropertyRef Name="SecurityQuestions1" />
+          </Key>
+          <Property Name="SecurityQuestions1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SecurityAnswer1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SecurityQuestions2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SecurityAnswer2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SecurityQuestions3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SecurityAnswer3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblauth">
+          <Key>
+            <PropertyRef Name="Username" />
+          </Key>
+          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Company" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Department" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tblChangePwd">
+          <Key>
+            <PropertyRef Name="Username" />
+          </Key>
+          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CompanyId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Linkedemail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbllogin">
+          <Key>
+            <PropertyRef Name="Username" />
+          </Key>
+          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Company" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Department" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="Sunray12dbDataContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="newentrytbls" EntityType="Self.newentrytbl" />
+          <EntitySet Name="NewTimeEntrytbls" EntityType="Self.NewTimeEntrytbl" />
+          <EntitySet Name="newtimetbls" EntityType="Self.newtimetbl" />
+          <EntitySet Name="Profiletbls" EntityType="Self.Profiletbl" />
+          <EntitySet Name="Registertbls" EntityType="Self.Registertbl" />
+          <EntitySet Name="Securitytbls" EntityType="Self.Securitytbl" />
+          <EntitySet Name="tblauths" EntityType="Self.tblauth" />
+          <EntitySet Name="tblChangePwds" EntityType="Self.tblChangePwd" />
+          <EntitySet Name="tbllogins" EntityType="Self.tbllogin" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Sunray12dbModelStoreContainer" CdmEntityContainer="Sunray12dbDataContext">
+          <EntitySetMapping Name="newentrytbls">
+            <EntityTypeMapping TypeName="Sunray12dbModel.newentrytbl">
+              <MappingFragment StoreEntitySet="newentrytbl">
+                <ScalarProperty Name="WorkDay" ColumnName="WorkDay" />
+                <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+                <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+                <ScalarProperty Name="Client" ColumnName="Client" />
+                <ScalarProperty Name="TaskType" ColumnName="TaskType" />
+                <ScalarProperty Name="Project" ColumnName="Project" />
+                <ScalarProperty Name="SubProject" ColumnName="SubProject" />
+                <ScalarProperty Name="Hour" ColumnName="Hour" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NewTimeEntrytbls">
+            <EntityTypeMapping TypeName="Sunray12dbModel.NewTimeEntrytbl">
+              <MappingFragment StoreEntitySet="NewTimeEntrytbl">
+                <ScalarProperty Name="WorkDay" ColumnName="WorkDay" />
+                <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+                <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+                <ScalarProperty Name="Client" ColumnName="Client" />
+                <ScalarProperty Name="TaskType" ColumnName="TaskType" />
+                <ScalarProperty Name="Project" ColumnName="Project" />
+                <ScalarProperty Name="Subproject" ColumnName="Subproject" />
+                <ScalarProperty Name="Hour" ColumnName="Hour" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="newtimetbls">
+            <EntityTypeMapping TypeName="Sunray12dbModel.newtimetbl">
+              <MappingFragment StoreEntitySet="newtimetbl">
+                <ScalarProperty Name="Client" ColumnName="Client" />
+                <ScalarProperty Name="TaskType" ColumnName="TaskType" />
+                <ScalarProperty Name="Project" ColumnName="Project" />
+                <ScalarProperty Name="SubProject" ColumnName="SubProject" />
+                <ScalarProperty Name="Hour" ColumnName="Hour" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Profiletbls">
+            <EntityTypeMapping TypeName="Sunray12dbModel.Profiletbl">
+              <MappingFragment StoreEntitySet="Profiletbl">
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
+                <ScalarProperty Name="Address2" ColumnName="Address2" />
+                <ScalarProperty Name="Reports" ColumnName="Reports" />
+                <ScalarProperty Name="Postal" ColumnName="Postal" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Phone2" ColumnName="Phone2" />
+                <ScalarProperty Name="Other" ColumnName="Other" />
+                <ScalarProperty Name="PrimaryEmail" ColumnName="PrimaryEmail" />
+                <ScalarProperty Name="SecondaryEmail" ColumnName="SecondaryEmail" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Registertbls">
+            <EntityTypeMapping TypeName="Sunray12dbModel.Registertbl">
+              <MappingFragment StoreEntitySet="Registertbl">
+                <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+                <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+                <ScalarProperty Name="Phonenumber" ColumnName="Phonenumber" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="gender" ColumnName="gender" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="SecurityQuestion1" ColumnName="SecurityQuestion1" />
+                <ScalarProperty Name="SecurityAnswer1" ColumnName="SecurityAnswer1" />
+                <ScalarProperty Name="SecurityQuestion2" ColumnName="SecurityQuestion2" />
+                <ScalarProperty Name="SecurityAnswer2" ColumnName="SecurityAnswer2" />
+                <ScalarProperty Name="SecurityQuestion3" ColumnName="SecurityQuestion3" />
+                <ScalarProperty Name="SecurityAnswer3" ColumnName="SecurityAnswer3" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Securitytbls">
+            <EntityTypeMapping TypeName="Sunray12dbModel.Securitytbl">
+              <MappingFragment StoreEntitySet="Securitytbl">
+                <ScalarProperty Name="SecurityQuestions1" ColumnName="SecurityQuestions1" />
+                <ScalarProperty Name="SecurityAnswer1" ColumnName="SecurityAnswer1" />
+                <ScalarProperty Name="SecurityQuestions2" ColumnName="SecurityQuestions2" />
+                <ScalarProperty Name="SecurityAnswer2" ColumnName="SecurityAnswer2" />
+                <ScalarProperty Name="SecurityQuestions3" ColumnName="SecurityQuestions3" />
+                <ScalarProperty Name="SecurityAnswer3" ColumnName="SecurityAnswer3" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblauths">
+            <EntityTypeMapping TypeName="Sunray12dbModel.tblauth">
+              <MappingFragment StoreEntitySet="tblauth">
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Company" ColumnName="Company" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblChangePwds">
+            <EntityTypeMapping TypeName="Sunray12dbModel.tblChangePwd">
+              <MappingFragment StoreEntitySet="tblChangePwd">
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+                <ScalarProperty Name="Linkedemail" ColumnName="Linkedemail" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbllogins">
+            <EntityTypeMapping TypeName="Sunray12dbModel.tbllogin">
+              <MappingFragment StoreEntitySet="tbllogin">
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Company" ColumnName="Company" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

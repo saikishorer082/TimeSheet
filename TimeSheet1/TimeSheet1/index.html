@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html ng-app="timeSheet">
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/bootstrap-theme.min.css" rel="stylesheet" />
+    <script src="scripts/jquery-3.1.0.min.js"></script>
+    <script src="scripts/bootstrap.min.js"></script>
+    <script src="scripts/angular.min.js"></script>
+    <script src="scripts/angular-ui-router-min.js"></script>
+    <link href="AngularApp/css/login.css" rel="stylesheet" />
+    <link href="AngularApp/css/nav.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="well-sm" ng-controller="mainCtrl">
+        <div ng-include="appNav"></div>
+        <div ui-view></div>
+    </div>
+
+    <script src="AngularApp/app/Common/authFact.js"></script>
+    <script src="AngularApp/app/login/login.js"></script>
+    <script src="AngularApp/app/login/loginCtrl.js"></script>
+    <script src="AngularApp/app/login/loginSvc.js"></script>
+    <script src="AngularApp/app/NewTimeEntry/newTimeEntry.js"></script>
+    <script src="AngularApp/app/NewTimeEntry/newTimeEntryCtrl.js"></script>
+    <script src="AngularApp/app/NewTimeEntry/newTimeEntrySvc.js"></script>
+    <script src="AngularApp/app/profile/profile.js"></script>
+    <script src="AngularApp/app/profile/profileCtrl.js"></script>
+    <script src="AngularApp/app/profile/profileSvc.js"></script>
+    <script src="AngularApp/app/viewtimeentry/viewTimeEntry.js"></script>
+    <script src="AngularApp/app/viewtimeentry/viewTimeEntryCtrl.js"></script>
+    <script src="AngularApp/app/viewtimeentry/viewTimeEntrySvc.js"></script>
+    <script src="AngularApp/app/security que/securityque.js"></script>
+    <script src="AngularApp/app/signup/signUp.js"></script>
+    <script src="AngularApp/app/app.js"></script>
+    <script src="AngularApp/app/main/main.js"></script>
+<script src="AngularApp/app/main/mainCtrl.js"></script>
+</body>
+</html>

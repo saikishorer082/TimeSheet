@@ -1,0 +1,107 @@
+﻿<div class="container" style="padding-left:160px">
+    <form class="form-horizontal">
+        <div class="well">
+            <h3>View or Submit entries</h3>
+            <br />
+            <br />
+            <!--<div class="form-group">
+                <label for="FromDate" class="control-label col-xs-1">From Date</label>
+                <div class="col-xs-3">
+                    <input type="text" class="form-control" id="FromDate" ng-model="View.FromDate"/>
+                </div>
+
+
+                <label for="ToDate" class="control-label col-xs-2">To Date</label>
+                <div class="col-xs-2">
+                    <input type="text" class="form-control" id="ToDate" ng-model="View.ToDate"/>
+                </div>
+
+
+            </div>-->
+
+
+            <div class="form-group">
+                <label for="Client" class="control-label col xs-1 col-md-1">Client </label>
+                <div class="col-md-5">
+                    <input type="text" class="form-control" id="Client" ng-model="View.Client" />
+
+
+                </div>
+
+
+                <label for="TaskType" class="control-label col-md-2">Task Type</label>
+                <div class="col-md-4">
+                    <input type="text" class="form-control" id="TaskType" ng-model="View.TaskType" />
+
+                </div>
+            </div>
+
+
+
+            <div class="form-group">
+                <label for="Project" class="control-label col-md-1">Project</label>
+                <div class="col-md-5">
+                    <input type="text" class="form-control" id="Project" ng-model="View.Project" />
+
+                </div>
+
+                <label for="SubProject" class="control-label col-md-2">Sub Project</label>
+                <div class="col-md-4">
+                    <input type="text" class="form-control" id="SubProject" ng-model="View.Subproject" />
+
+                </div>
+            </div>
+
+
+
+            <div class="form-group">
+
+                <div class="pull-right">
+                    <button type="button" class="btn btn-warning" ng-click="list()">List</button> <button type="button" class="btn btn-success" ng-click="submit()">Submit</button>
+                </div>
+            </div>
+
+            <br />
+            <div class="form-inline">
+
+                <table class="table table-hover">
+
+                    <thead>
+
+                        <tr>
+
+
+                            <th>Date</th>
+                            <th>Start Time</th>
+                            <th>End Time</th>
+                            <th>Client</th>
+                            <th>TaskType</th>
+                            <th>Project</th>
+                            <th>Sub Project</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+
+
+                        <tr ng-repeat="V in View1|filter:View">
+
+
+                            <td>{{V.WorkDay}}</td>
+                            <td>{{V.StartTime}}</td>
+                            <td>{{V.EndTime}}</td>
+                            <td>{{V.Client}}</td>
+                            <td>{{V.TaskType}}</td>
+                            <td>{{V.Project}}</td>
+                            <td>{{V.Subproject}}</td>
+
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+            <br />
+
+        </div>
+    </form>
+</div>

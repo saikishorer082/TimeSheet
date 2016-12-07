@@ -1,0 +1,144 @@
+﻿<div class="container" style="padding-left:160px">
+    <form class="form-horizontal">
+        <div class="well">
+            <h3>NewTime Entry</h3>
+            <br />
+            <br />
+            <div class="form-group col-lg-offset-2">
+                <label for="WorkDay" class="control-label col-xs-1">Work Day</label>
+                <div class="col-xs-3">
+                    <input type="text" class="form-control" id="WorkDay" ng-model="user.WorkDay" />
+                </div>
+
+
+                <label for="StartTime" class="control-label col-xs-2">Start Time</label>
+                <div class="col-xs-2">
+                    <input type="text" class="form-control" id="StartTime" ng-model="user.StartTime" />
+                </div>
+
+
+                <label for="EndTime" class="control-label col-xs-2">End Time</label>
+
+                <div class="col-xs-2">
+                    <input type="text" class="form-control" id="EndTime" ng-model="user.EndTime" />
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label for="Client" class="control-label col xs-1 col-md-1">Client</label>
+                <div class="col-md-5">
+                    <select class="form-control" ng-model="user.Client">
+                        <option selected disabled value="">Select</option>
+                        <option ng-repeat="client in clients">{{client}}</option>
+
+                    </select>
+                </div>
+
+
+                <label for="TaskType" class="control-label col-md-2">Task Type</label>
+                <div class="col-md-4">
+                    <select class="form-control" ng-model="user.TaskType">
+                        <option selected disabled value="">Select</option>
+                        <option ng-repeat="Task in Tasks">{{Task}}</option>
+                    </select>
+
+                </div>
+            </div>
+
+
+
+            <div class="form-group">
+                <label for="Project" class="control-label col-md-1">Project</label>
+                <div class="col-md-5">
+                    <select class="form-control" ng-model="user.Project">
+                        <option selected disabled value="">Select</option>
+                        <option ng-repeat="project in projects">{{project}}</option>
+                    </select>
+
+                </div>
+
+                <label for="SubProject" class="control-label col-md-2">Sub Project</label>
+                <div class="col-md-4">
+                    <select class="form-control" ng-model="user.Subproject">
+                        <option selected disabled value="">Select</option>
+                        <option ng-repeat="subproject in subprojects">{{subproject}}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="Hour" class="control-label col-xs-1">Hour</label>
+                <div class="col-xs-2">
+                    <input type="text" class="form-control" id="Hour" ng-model="user.Hour" />
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label for="Comment" class="control-label col-md-1">Comment</label>
+
+                <div class="col-md-11">
+                    <textarea type="text" class="form-control" id="Comment" ng-model="user.Comment"></textarea>
+
+
+
+                </div>
+
+            </div>
+            <div class="form-group">
+
+                <div class="pull-right">
+                    <button type="reset" class="btn btn-warning">Reset Fields</button> 
+                    <button type="button" class="btn btn-success" ng-click="saveNewTimeEntry(user)">Save</button>
+                </div>
+            </div>
+            <div>
+                <button type="button" class="btn btn-primary " style="margin-left:10%" ng-click="recentlyAdded()">Display Recent ADDED</button>
+            </div>
+
+            <br />
+            <div class="form-inline">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Function</th>
+                            <th>WorkDay</th>
+                            <th>StartTime</th>
+                            <th>EndTime</th>
+                            <th>Client</th>
+                            <th>TaskType</th>
+                            <th>Project</th>
+                            <th>SubProject</th>
+                            <th>Hour</th>
+                            <th>Comment</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr ng-repeat="a in newentry">
+                            <td>
+                                <a href="" ng-click="edit(a.WorkDay)" title="Edit"><span class="glyphicon glyphicon-edit"></span></a> |
+                                <a href="" ng-click="delete(a.WorkDay)" title="Delete"><span class="glyphicon glyphicon-trash"></span></a>
+                            </td>
+
+                            <td>{{a.WorkDay}}</td>
+                            <td>{{a.StartTime}}</td>
+                            <td>{{a.EndTime}}</td>
+                            <td>{{a.Client}}</td>
+                            <td>{{a.TaskType}}</td>
+                            <td>{{a.Project}}</td>
+                            <td>{{a.Subproject}}</td>
+                            <td>{{a.Hour}}</td>
+                            <td>{{a.Comment}}</td>
+                        </tr>
+
+
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </form>
+</div>

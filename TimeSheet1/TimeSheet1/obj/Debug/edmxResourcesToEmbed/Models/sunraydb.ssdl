@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Sunray12dbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="newentrytbl">
+    <Key>
+      <PropertyRef Name="StartTime" />
+    </Key>
+    <Property Name="WorkDay" Type="date" />
+    <Property Name="StartTime" Type="time" Precision="7" Nullable="false" />
+    <Property Name="EndTime" Type="time" Precision="7" />
+    <Property Name="Client" Type="nvarchar(max)" />
+    <Property Name="TaskType" Type="nvarchar(max)" />
+    <Property Name="Project" Type="nvarchar(max)" />
+    <Property Name="SubProject" Type="nvarchar" MaxLength="50" />
+    <Property Name="Hour" Type="nvarchar(max)" />
+    <Property Name="Comment" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="NewTimeEntrytbl">
+    <Key>
+      <PropertyRef Name="WorkDay" />
+    </Key>
+    <Property Name="WorkDay" Type="date" Nullable="false" />
+    <Property Name="StartTime" Type="time" Precision="7" Nullable="false" />
+    <Property Name="EndTime" Type="time" Precision="7" Nullable="false" />
+    <Property Name="Client" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TaskType" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Project" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Subproject" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Hour" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Comment" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="newtimetbl">
+    <Key>
+      <PropertyRef Name="TaskType" />
+    </Key>
+    <Property Name="Client" Type="nvarchar(max)" />
+    <Property Name="TaskType" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Project" Type="nchar" MaxLength="10" />
+    <Property Name="SubProject" Type="nchar" MaxLength="10" />
+    <Property Name="Hour" Type="nchar" MaxLength="10" />
+    <Property Name="Comment" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Profiletbl">
+    <Key>
+      <PropertyRef Name="FirstName" />
+    </Key>
+    <Property Name="FirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Country" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Department" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Address" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Position" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Address2" Type="nvarchar" MaxLength="50" />
+    <Property Name="Reports" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Postal" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="City" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="State" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Phone" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Phone2" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="Other" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="PrimaryEmail" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="SecondaryEmail" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Registertbl">
+    <Key>
+      <PropertyRef Name="Firstname" />
+    </Key>
+    <Property Name="Firstname" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Lastname" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Phonenumber" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Age" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="gender" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Country" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="SecurityQuestion1" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="SecurityAnswer1" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="SecurityQuestion2" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="SecurityAnswer2" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="SecurityQuestion3" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="SecurityAnswer3" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Username" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Securitytbl">
+    <Key>
+      <PropertyRef Name="SecurityQuestions1" />
+    </Key>
+    <Property Name="SecurityQuestions1" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="SecurityAnswer1" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="SecurityQuestions2" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="SecurityAnswer2" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="SecurityQuestions3" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="SecurityAnswer3" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblauth">
+    <Key>
+      <PropertyRef Name="Username" />
+    </Key>
+    <Property Name="Username" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" />
+    <Property Name="Company" Type="nvarchar" MaxLength="50" />
+    <Property Name="Department" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblChangePwd">
+    <Key>
+      <PropertyRef Name="Username" />
+    </Key>
+    <Property Name="Username" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CompanyId" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Linkedemail" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbllogin">
+    <Key>
+      <PropertyRef Name="Username" />
+    </Key>
+    <Property Name="Username" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Company" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Department" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="Sunray12dbModelStoreContainer">
+    <EntitySet Name="newentrytbl" EntityType="Self.newentrytbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NewTimeEntrytbl" EntityType="Self.NewTimeEntrytbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="newtimetbl" EntityType="Self.newtimetbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Profiletbl" EntityType="Self.Profiletbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Registertbl" EntityType="Self.Registertbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Securitytbl" EntityType="Self.Securitytbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblauth" EntityType="Self.tblauth" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblChangePwd" EntityType="Self.tblChangePwd" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbllogin" EntityType="Self.tbllogin" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
